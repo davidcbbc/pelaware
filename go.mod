@@ -1,3 +1,3 @@
-module github.com/LuanSilveiraSouza/rangoware
+module github.com/davidcbbc/pelaware
 
 go 1.16

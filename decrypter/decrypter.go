@@ -9,8 +9,7 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
-
-	"github.com/LuanSilveiraSouza/rangoware/explorer"
+	"github.com/davidcbbc/pelaware/explorer"
 )
 
 func main() {
